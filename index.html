@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Miette &amp; Thé – Salon de thé et cookies à Wavre</title>
+<meta name="description" content="Miette &amp; Thé, salon de thé et cookie café à Wavre : cookies tièdes, thés du monde et douceurs faites maison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#9AD5E1;--teal:#1D7A93;--paper:#F6F5F2;--white:#FFFFFF;--ink:#1B1612;--muted:#6E645C;--line:#E6E1DA;
+  --caramel:#D9812F;--caramel-d:#B8661A;--choco:#4A2C1E;--cream:#FFF1DC;
+  --sans:'Poppins','Helvetica Neue',Arial,sans-serif;color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--choco);outline-offset:3px}
+.page{max-width:76rem;margin:0 auto;padding:1.25rem;display:grid;gap:1.25rem}
+@media(min-width:900px){.page{padding:2rem;gap:2rem}}
+.card{background:var(--paper);border-radius:1.75rem;overflow:hidden;position:relative}
+h1,h2,h3{margin:0;line-height:1.15;font-weight:600;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.btn{display:inline-block;background:var(--caramel);color:#fff;font:inherit;font-weight:600;padding:.7rem 1.5rem;border-radius:.6rem;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--caramel-d)}
+.link{font-weight:600;text-decoration:underline;text-underline-offset:.3em}
+
+/* HERO : photo en bas, fondue vers un haut clair */
+.hero{min-height:44rem;display:flex;flex-direction:column;background:linear-gradient(180deg,#F4F3F0,#ECE9E4)}
+.hero .photo{position:absolute;left:0;right:0;bottom:0;height:62%;background-color:#E9C9A0;background-image:var(--img),linear-gradient(135deg,#F0D2AA,#E4B684);background-size:cover;background-position:center 60%;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 42%);mask-image:linear-gradient(to bottom,transparent 0,#000 42%)}
+.hero>*{position:relative;z-index:1}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.5rem 2rem}
+.logo{font-weight:700;font-size:1.35rem;text-decoration:none;letter-spacing:-.03em}
+.logo span{color:var(--caramel)}
+.bar nav{display:flex;align-items:center;gap:1.6rem}
+.bar nav a{text-decoration:none;font-weight:500}
+.bar nav a:hover{color:var(--caramel-d)}
+.bar nav a.btn{color:#fff;padding:.55rem 1.3rem}
+.hero-body{padding:3rem 2rem 0;max-width:46rem}
+.hero h1{font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:700}
+.hero h1 em{font-style:normal;color:var(--caramel)}
+.hero p{margin:1.4rem 0 1.8rem;color:#1B1612;font-weight:500;max-width:30rem;font-size:1.05rem}
+.go{position:absolute;left:50%;bottom:1.6rem;transform:translateX(-50%);width:4.2rem;height:4.2rem;border-radius:50%;background:var(--caramel);color:#fff;display:grid;place-items:center;text-decoration:none;box-shadow:0 8px 20px rgba(74,44,30,.3);z-index:2}
+.go:hover{background:var(--caramel-d)}
+.go svg{width:1.6rem;height:1.6rem}
+@media(max-width:700px){.bar{padding:1.1rem 1.2rem}.bar nav a:not(.btn){display:none}.hero-body{padding:2rem 1.3rem 0}.hero{min-height:38rem}.hero .photo{height:52%}}
+.chips{position:absolute;right:2rem;top:8rem;z-index:1;display:grid;gap:.6rem;justify-items:end}
+.chips span{background:rgba(255,255,255,.85);backdrop-filter:blur(4px);padding:.4rem 1rem;border-radius:2rem;font-size:.85rem;font-weight:600}
+@media(max-width:900px){.chips{display:none}}
+
+/* SECTIONS */
+.pad{padding:3.5rem 2rem}
+@media(max-width:700px){.pad{padding:2.5rem 1.3rem}}
+.head{margin-bottom:2rem}
+.head p{color:var(--muted);margin:.5rem 0 0}
+.cols{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.item{background:var(--white);border-radius:1.25rem;overflow:hidden}
+.item .pic{aspect-ratio:4/3;background-color:#EBD2B4;background-image:var(--img),linear-gradient(135deg,#F0D8BA,#E5C093);background-size:cover;background-position:center}
+.item div.t{padding:1.1rem 1.3rem 1.4rem}
+.item h3{font-size:1.2rem}
+.item p{margin:.35rem 0 0;color:var(--muted);font-size:.95rem}
+
+.menu-card{background:var(--teal);color:#fff}
+.menu-card .head p{color:#D6EEF4}
+.sub{display:flex;align-items:center;gap:1rem;margin:2.2rem 0 1.2rem;font-size:1.3rem;font-weight:600}
+.sub::after{content:"";flex:1;height:2px;background:rgba(255,255,255,.3)}
+.tiles{display:grid;gap:1.1rem;grid-template-columns:repeat(4,1fr)}
+@media(max-width:980px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.tiles{grid-template-columns:1fr}}
+.track{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.2rem 0 .4rem;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.track .tile{flex:0 0 calc((100% - 3.3rem)/4);scroll-snap-align:start}
+@media(max-width:980px){.track .tile{flex-basis:calc((100% - 1.1rem)/2)}}
+@media(max-width:520px){.track .tile{flex-basis:78%}}
+.sub::after{order:1}.sub h3{font-size:inherit}.arrows{order:2;display:flex;gap:.5rem}
+.arrows button{width:2.6rem;height:2.6rem;border-radius:50%;border:0;background:var(--cream);color:var(--ink);font:inherit;font-size:1.2rem;font-weight:700;cursor:pointer}
+.arrows button:hover{background:var(--caramel);color:#fff}
+.tile{background:var(--cream);color:var(--ink);border-radius:1.25rem;padding:1.2rem 1.2rem 1.3rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+.tile .disc{width:8.6rem;height:8.6rem;border-radius:50%;background:var(--bgc,#FFE3B8);display:grid;place-items:center;margin-bottom:.9rem}
+.tile .disc svg{width:7.6rem;height:7.6rem;transition:transform .35s ease}
+.tile:hover .disc svg{transform:rotate(14deg) scale(1.06)}
+.tile h3{font-size:1.1rem}
+.tile p{margin:.3rem 0 .9rem;font-size:.9rem;color:var(--muted);flex:1}
+.price{background:var(--caramel);color:#fff;font-weight:700;padding:.25rem .9rem;border-radius:2rem;font-size:.95rem}
+.drinks{display:grid;gap:1.1rem;grid-template-columns:repeat(2,1fr)}
+@media(max-width:700px){.drinks{grid-template-columns:1fr}}
+.drink{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:1.25rem;padding:.9rem 1.2rem}
+.drink svg{width:3.4rem;height:3.4rem;flex:none}
+.drink div{flex:1}
+.drink b{font-weight:600;display:block}
+.drink small{color:#CFE8EF;font-size:.85rem}
+.drink .price{background:#FFD79A;color:var(--ink)}
+.duo{margin-top:2.2rem;background:var(--caramel);color:#fff;border-radius:1.25rem;padding:1.4rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap}
+.duo h3{font-size:1.4rem}
+.duo p{margin:.2rem 0 0;font-size:.95rem}
+.duo .big{font-size:2rem;font-weight:700}
+.duo .btn{background:#fff;color:var(--caramel-d)}
+.duo .btn:hover{background:var(--cream)}
+.note{margin:1.4rem 0 0;font-size:.85rem;color:#CFE8EF}
+.place{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--cream)}
+.place .pic{min-height:22rem;background-color:#E9CFA8;background-image:var(--img),linear-gradient(135deg,#F1D5AE,#E3B987);background-size:cover;background-position:center}
+.place .txt{padding:3rem 2.5rem;align-self:center}
+.place p{color:#5E544C;margin:.9rem 0 1.4rem}
+.hours{list-style:none;margin:0;padding:0;max-width:21rem}
+.hours li{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid rgba(74,44,30,.15)}
+@media(max-width:760px){.place{grid-template-columns:1fr}.place .pic{min-height:15rem}.place .txt{padding:2rem 1.3rem}}
+
+.book{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:center}
+@media(max-width:760px){.book{grid-template-columns:1fr;gap:1.8rem}}
+.book p{color:var(--muted)}
+form{display:grid;gap:.8rem;background:var(--white);padding:1.5rem;border-radius:1.25rem}
+label{font-size:.88rem;font-weight:600;display:grid;gap:.3rem}
+input,select,textarea{font:inherit;padding:.75rem .9rem;border-radius:.6rem;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
+textarea{min-height:5rem;resize:vertical}
+#ok{display:none;background:var(--cream);padding:1rem;border-radius:.6rem;margin:0;color:var(--ink)}
+footer{color:#12414B;font-size:.85rem;padding:.2rem .6rem 1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{color:inherit}
+@media(prefers-reduced-motion:no-preference){.hero-body>*{animation:up .7s ease both}.hero-body>*:nth-child(2){animation-delay:.1s}.hero-body>*:nth-child(3){animation-delay:.2s}@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="card hero">
+  <div class="photo" role="img" aria-label="Cookies et douceurs posés sur une table" style="--img:url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=1800&q=75')"></div>
+  <div class="bar">
+    <a class="logo" href="#">Miette <span>&amp;</span> Thé</a>
+    <nav aria-label="Navigation principale"><a href="#carte">La carte</a><a href="#lieu">Le lieu</a><a href="#reserver">Contact</a><a class="btn" href="#reserver">Réserver</a></nav>
+  </div>
+  <div class="chips" aria-hidden="true"><span>Cookies tièdes</span><span>Thés du monde</span><span>Fait maison</span></div>
+  <div class="hero-body">
+    <h1>Un cookie, un thé,<br>et la journée <em>sourit.</em></h1>
+    <p>Salon de thé et cookie café à Wavre : cuits chaque matin, servis tièdes, à savourer sur place ou à emporter.</p>
+    <a class="btn" href="#carte">Voir la carte</a>
+  </div>
+  <a class="go" href="#favoris" aria-label="Découvrir nos favoris"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
+</header>
+
+<main style="display:contents">
+<section id="favoris" class="card pad">
+  <div class="head"><h2>Les favoris de la maison</h2><p>Trois raisons de pousser la porte.</p></div>
+  <div class="cols">
+    <div class="item"><div class="pic" role="img" aria-label="Cookies sur une assiette" style="--img:url('https://images.unsplash.com/photo-1530268430791-f7d3be9b5f52?auto=format&fit=crop&w=800&q=75')"></div><div class="t"><h3>Nos cookies</h3><p>Croustillants autour, fondants au cœur.</p></div></div>
+    <div class="item"><div class="pic" role="img" aria-label="Tasse de thé sur une table" style="--img:url('https://images.unsplash.com/photo-1722654583863-6116ec8f247a?auto=format&fit=crop&w=800&q=75')"></div><div class="t"><h3>Thés &amp; infusions</h3><p>Noirs, verts, infusions : à partager en théière.</p></div></div>
+    <div class="item"><div class="pic" role="img" aria-label="Viennoiseries" style="--img:url('https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=800&q=75')"></div><div class="t"><h3>Douceurs maison</h3><p>Viennoiseries, tartes et gâteaux du jour.</p></div></div>
+  </div>
+</section>
+
+<section id="carte" class="card menu-card pad">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="cookie" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="var(--dough)"/><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="3"/><g fill="var(--chip)"><ellipse cx="34" cy="34" rx="7" ry="5" transform="rotate(-20 34 34)"/><ellipse cx="62" cy="30" rx="6" ry="5"/><ellipse cx="68" cy="56" rx="7" ry="5" transform="rotate(25 68 56)"/><ellipse cx="42" cy="58" rx="6" ry="5"/><ellipse cx="30" cy="68" rx="5" ry="4"/><ellipse cx="54" cy="74" rx="6" ry="4" transform="rotate(-15 54 74)"/><ellipse cx="50" cy="48" rx="4" ry="3"/></g></symbol>
+      <symbol id="cookie2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="var(--dough)"/><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="3"/><g fill="var(--chip)"><circle cx="32" cy="38" r="3"/><circle cx="46" cy="28" r="3"/><circle cx="64" cy="36" r="3"/><circle cx="72" cy="52" r="3"/><circle cx="58" cy="62" r="3"/><circle cx="38" cy="60" r="3"/><circle cx="50" cy="46" r="3"/><circle cx="62" cy="76" r="3"/><circle cx="34" cy="74" r="3"/><circle cx="26" cy="54" r="3"/></g><path d="M50 18 A32 32 0 0 1 82 50" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="4" stroke-linecap="round"/></symbol>
+      <symbol id="cup" viewBox="0 0 64 64"><path d="M10 28h36v10a16 16 0 0 1-16 16h-4A16 16 0 0 1 10 38z" fill="#fff"/><path d="M46 31h4a6 6 0 0 1 0 12h-5" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/><rect x="6" y="54" width="44" height="4" rx="2" fill="var(--c)"/><rect x="10" y="28" width="36" height="6" fill="var(--c)"/><path d="M22 8c-3 4 3 6 0 10M32 8c-3 4 3 6 0 10M42 8c-3 4 3 6 0 10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></symbol>
+    </defs>
+  </svg>
+  <div class="head"><h2>La carte</h2><p>Un aperçu de ce qu’on aime servir.</p></div>
+  <div class="sub"><h3>Les cookies</h3><div class="arrows"><button type="button" id="prev" aria-label="Cookies précédents">&#8592;</button><button type="button" id="next" aria-label="Cookies suivants">&#8594;</button></div></div>
+  <div class="track" id="track" tabindex="0" aria-label="Nos cookies, faire défiler">
+    <div class="tile" style="--bgc:#FFD9C2"><div class="disc"><svg viewBox="0 0 100 100" style="--dough:#C98A4B;--chip:#3B2216" aria-hidden="true"><use href="#cookie"/></svg></div><h3>Chocolat noir</h3><p>Pépites et fleur de sel</p><span class="price">3,50 €</span></div>
+    <div class="tile" style="--bgc:#FFE7B3"><div class="disc"><svg viewBox="0 0 100 100" style="--dough:#D9A15F;--chip:#8B5A2B" aria-hidden="true"><use href="#cookie"/></svg></div><h3>Beurre de noisette</h3><p>Noisettes torréfiées</p><span class="price">3,50 €</span></div>
+    <div class="tile" style="--bgc:#FFF3B0"><div class="disc"><svg viewBox="0 0 100 100" style="--dough:#F2D983;--chip:#2C2F4A" aria-hidden="true"><use href="#cookie2"/></svg></div><h3>Citron &amp; pavot</h3><p>Frais et légèrement acidulé</p><span class="price">3,50 €</span></div>
+    <div class="tile" style="--bgc:#F9D5E0"><div class="disc"><svg viewBox="0 0 100 100" style="--dough:#D8B27A;--chip:#6B2E4F" aria-hidden="true"><use href="#cookie"/></svg></div><h3>Avoine &amp; raisins</h3><p>Le classique réconfortant</p><span class="price">3,20 €</span></div>
+  <div class="tile" style="--bgc:#E3EFC8"><div class="disc"><svg viewBox="0 0 100 100" style="--dough:#D6DFA0;--chip:#E0527A" aria-hidden="true"><use href="#cookie"/></svg></div><h3>Pistache &amp; framboise</h3><p>Crousti-fondant, éclats de fruits</p><span class="price">3,80 €</span></div><div class="tile" style="--bgc:#FFE0B0"><div class="disc"><svg viewBox="0 0 100 100" style="--dough:#E2AA62;--chip:#C47A22" aria-hidden="true"><use href="#cookie"/></svg></div><h3>Caramel beurre salé</h3><p>Cœur coulant de caramel</p><span class="price">3,80 €</span></div><div class="tile" style="--bgc:#F7CFCB"><div class="disc"><svg viewBox="0 0 100 100" style="--dough:#B5453F;--chip:#FFF3E0" aria-hidden="true"><use href="#cookie"/></svg></div><h3>Red velvet</h3><p>Pépites de chocolat blanc</p><span class="price">3,80 €</span></div>
+  </div>
+  <h3 class="sub">Les boissons</h3>
+  <div class="drinks">
+    <div class="drink"><svg viewBox="0 0 64 64" style="--c:#F2A34A" aria-hidden="true"><use href="#cup"/></svg><div><b>Thé noir</b><small>Théière pour une personne</small></div><span class="price">4,00 €</span></div>
+    <div class="drink"><svg viewBox="0 0 64 64" style="--c:#8FD3A0" aria-hidden="true"><use href="#cup"/></svg><div><b>Menthe fraîche</b><small>Feuilles fraîches infusées</small></div><span class="price">4,00 €</span></div>
+    <div class="drink"><svg viewBox="0 0 64 64" style="--c:#D98C5F" aria-hidden="true"><use href="#cup"/></svg><div><b>Chocolat chaud</b><small>Chocolat fondu, lait entier</small></div><span class="price">4,50 €</span></div>
+    <div class="drink"><svg viewBox="0 0 64 64" style="--c:#FF8FA8" aria-hidden="true"><use href="#cup"/></svg><div><b>Café</b><small>Espresso ou allongé</small></div><span class="price">2,80 €</span></div>
+  <div class="drink"><svg viewBox="0 0 64 64" style="--c:#C98A5B" aria-hidden="true"><use href="#cup"/></svg><div><b>Chocolat chaud speculoos</b><small>Crème fouettée, éclats de biscuit</small></div><span class="price">5,20 €</span></div><div class="drink"><svg viewBox="0 0 64 64" style="--c:#E2AA62" aria-hidden="true"><use href="#cup"/></svg><div><b>Latte caramel beurre salé</b><small>Espresso, lait, caramel maison</small></div><span class="price">4,80 €</span></div><div class="drink"><svg viewBox="0 0 64 64" style="--c:#A8D5A2" aria-hidden="true"><use href="#cup"/></svg><div><b>Matcha latte vanille</b><small>Thé vert, lait, vanille</small></div><span class="price">5,00 €</span></div><div class="drink"><svg viewBox="0 0 64 64" style="--c:#F29BB4" aria-hidden="true"><use href="#cup"/></svg><div><b>Chocolat blanc framboise</b><small>Onctueux, coulis de framboise</small></div><span class="price">5,20 €</span></div>
+  </div>
+  <div class="duo">
+    <div><h3>Le duo goûter</h3><p>Un cookie au choix + une boisson chaude</p></div>
+    <span class="big">6,00 €</span>
+    <a class="btn" href="#reserver">Réserver</a>
+  </div>
+  <p class="note">Prix indicatifs : site de démonstration.</p>
+</section>
+
+<section id="lieu" class="card place">
+  <div class="pic" role="img" aria-label="Intérieur lumineux d’un café" style="--img:url('https://images.unsplash.com/photo-1751151015850-ae5e0356bb15?auto=format&fit=crop&w=1200&q=75')"></div>
+  <div class="txt">
+    <h2>Le lieu</h2>
+    <p>Un salon lumineux, quelques tables et l’envie de prendre le temps : goûter entre amis, pause calme ou rendez-vous de travail.</p>
+    <ul class="hours" aria-label="Horaires">
+      <li><span>Mardi – vendredi</span><span>9 h – 18 h</span></li>
+      <li><span>Samedi</span><span>9 h – 19 h</span></li>
+      <li><span>Dimanche</span><span>10 h – 17 h</span></li>
+      <li><span>Lundi</span><span>Fermé</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="reserver" class="card pad book">
+  <div>
+    <h2>Réserver une table</h2>
+    <p>Rue de l’Exemple 8, 1300 Wavre<br>02 000 00 00 (numéro d’exemple)</p>
+    <p>Dites-nous quand vous voulez venir, on vous confirme vite.</p>
+  </div>
+  <form id="f">
+    <label>Nom<input name="n" required autocomplete="name"></label>
+    <label>Jour souhaité<input name="d" type="date"></label>
+    <label>Nombre de personnes<select name="p"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5 ou plus</option></select></label>
+    <label>Un mot pour nous<textarea name="m"></textarea></label>
+    <button class="btn" type="submit">Envoyer ma demande</button>
+    <p id="ok" role="status">Merci ! Site de démonstration : aucune réservation n’a été envoyée.</p>
+  </form>
+</section>
+</main>
+
+<footer><span>© 2026 Miette &amp; Thé · Photos : <a href="https://unsplash.com">Unsplash</a></span><span>Site de démonstration, commerce fictif. Conçu par Xavier Brigode.</span></footer>
+</div>
+<script>
+var tr=document.getElementById('track');function step(){var t=tr.querySelector('.tile');return t.offsetWidth+17.6}
+document.getElementById('next').onclick=function(){tr.scrollBy({left:step()*2,behavior:'smooth'})};
+document.getElementById('prev').onclick=function(){tr.scrollBy({left:-step()*2,behavior:'smooth'})};
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').style.display='block';});
+</script>
+</body>
+</html>
